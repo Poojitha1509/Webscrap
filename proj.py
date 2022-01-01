@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 
 def getf_url(r):
@@ -43,7 +44,7 @@ def extract_record(item):
 def finalfunc(search):
     chrome_options=webdriver.ChromeOptions()
     chrome_options.add_argument('headless')
-    driver = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
     
     ide_ra=[]
     url=get_url(search)

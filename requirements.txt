@@ -1,4 +1,4 @@
-urllib3==1.26.0
+urllib3
 beautifulsoup4==4.9.3
 requests==2.24.0
 selenium==4.1.0

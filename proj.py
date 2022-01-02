@@ -42,7 +42,7 @@ def extract_record(item):
     return [name,price,rating,rc,url]
 def finalfunc(search):
     chrome_options=webdriver.ChromeOptions()
-    chrome_options.binary_location="/app/.app/usr/bin/"
+    chrome_options.binary_location="/app/.apt/usr/bin/"
     chrome_options.add_argument('headless')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')

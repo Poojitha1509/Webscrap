@@ -56,6 +56,7 @@ def finalfunc(search):
     driver.get(url.format(1))
     soup=BeautifulSoup(driver.page_source,'html.parser')
     results=soup.find_all('div',{'data-component-type':'s-search-result'})
+    st.write(len(results))
     for i in range(5):
         ide_ra.append(extract_record(results[i]))
     n=[]

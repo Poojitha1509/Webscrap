@@ -42,11 +42,15 @@ def extract_record(item):
     return [name,price,rating,rc,url]
 def finalfunc(search):
     chrome_options=webdriver.ChromeOptions()
+    chrome_options.binary_location="/app/.app/usr/bin/"
     chrome_options.add_argument('headless')
-    driver = webdriver.Chrome(chrome_options=chrome_options)
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    driver = webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver",chrome_options=chrome_options)
     
     ide_ra=[]
     url=get_url(search)
+    
 
     '''for i in range(1,21):'''
     driver.get(url.format(1))
